@@ -35,20 +35,25 @@ let numbers = [1, 3, 8, 4, 9, 8];
 // console.log("find method ", value2)
 
 
-console.log(numbers);
-console.log(fruit);
-numbers.pop()
-fruit.pop()
-console.log(numbers)
-console.log(fruit);
+// console.log(numbers);
+// console.log(fruit);
+// numbers.pop()
+// fruit.pop()
+// console.log(numbers)
+// console.log(fruit);
 
-fruit.push('Array')
-numbers.push(32)
-console.log(numbers)
-console.log(fruit);
+// fruit.push('Array')
+// numbers.push(32)
+// console.log(numbers)
+// console.log(fruit);
 
 
-let value2 = numbers.some((doc)=> {
-        return doc % 2 == 0;
-    })
-    console.log(value2)
+// let value2 = numbers.some((doc)=> {
+//         return doc % 2 == 0;
+//     })
+//     console.log(value2)
+
+let numbers2 = [1, 3, 8, 4, 9, 8];
+console.log(numbers2.length)
+console.log(numbers2.slice(2, numbers2.length-1));
+
