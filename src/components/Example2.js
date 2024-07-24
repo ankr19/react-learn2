@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 export default function Example2() {
     const [data, setdata] = React.useState({email: "", password: ""});
@@ -54,9 +55,10 @@ export default function Example2() {
             Check me out
           </label>
         </div>
-        <button type="submit" className="btn btn-primary" onClick={()=>{handleClick()}}>
+        <Button name={"Submit"} class1={"btn-outline-primary"} handle={handleClick} />
+        {/* <button type="submit" className="btn btn-primary" onClick={()=>{handleClick()}}>
           Submit
-        </button>
+        </button> */}
       </form>
     </div>
   );
