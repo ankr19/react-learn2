@@ -5,14 +5,16 @@ import Navbar from "./components/Navbar";
 import Example2 from "./components/Example2";
 import React, { useState } from "react";
 import Example3 from "./components/Example3";
+import { Outlet } from "react-router-dom";
 function App() {
   const fruit = ["Apple", "Grape", "Banana", "Green"];
   
   return (
     <div className="">
-      <Navbar />
+      <Outlet />
+      {/* <Navbar />
       <Example2 />
-      <Example3 />
+      <Example3 /> */}
     </div>
   );
 }
