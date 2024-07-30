@@ -11,7 +11,10 @@ function App() {
   
   return (
     <div className="">
+      <Navbar />
+      <div className="container mt-5">
       <Outlet />
+      </div>
       {/* <Navbar />
       <Example2 />
       <Example3 /> */}
