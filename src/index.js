@@ -4,12 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap/dist/js/bootstrap.min.js";
-import { createBrowserRouter, RouterProvider,  } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Home from "./pages/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      { path: "/home", element: <Home /> },
       {
         path: "/contact-us",
         element: <Contact />,
