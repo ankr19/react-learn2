@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FormLayout from "../components/FormLayout";
+import { AddNotes, deleteNote, getAllNotes } from '../hooks/apihooks'
 import Card from "../components/Card";
 import Moviedetails from "./Moviedetails";
 
@@ -7,10 +8,15 @@ export default function Home() {
   const [values, setvalues] = useState({ title: "", desc: "" });
   const [loading, setloading] = useState(false);
   const [data, setdata] = useState([]);
+
+  let getData = async ()=>{
+    return await getAllNotes();
+  }
   const handleSubmit = (e) => {
     setloading(false);
     if (values.desc !== "" && values.title !== "") {
-      setdata(data.concat(values));
+      // setdata(data.concat(values));
+      AddNotes(values)
       setvalues({ title: "", desc: "" });
       console.log(data);
       setloading(true);
@@ -23,18 +29,21 @@ export default function Home() {
     setvalues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const handleDelete = (index) => {
+  const handleDelete = async (id) => {
     setloading(false);
-    let da2 = data;
-    console.log(index);
-    da2.splice(index, 1);
-    setdata(da2);
+    deleteNote(id)
+    setdata(await getData())
     setloading(true);
-    // let da = delete data[index]
-    // console.log(da)
   };
 
-  useEffect(() => {}, [data, values, loading]);
+  useEffect(() => {
+    async function getvalues(){
+      setloading(true)
+      setdata(await getData())
+    };
+
+    getvalues()
+  }, []);
   const handleModify = (d, pos) => {
     setdata(
       data.map((obj, index) => {
@@ -45,11 +54,13 @@ export default function Home() {
       })
     );
   };
+
+  useEffect(()=>{},[data, loading])
   return (
     <div>
       <FormLayout change={handleChange} submit={handleSubmit} data={values} />
       {loading &&
-        data.map((doc, index) => (
+        data?.map((doc, index) => (
           <Card
             key={index}
             data={doc}
@@ -58,7 +69,6 @@ export default function Home() {
             save={handleModify}
           />
         ))}
-        <Moviedetails />
     </div>
   );
 }

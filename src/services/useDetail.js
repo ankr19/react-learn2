@@ -6,10 +6,10 @@ export const imagePathOriginal = "https://image.tmdb.org/t/p/original";
 // const baseUrl = "https://api.themoviedb.org/3";
 // const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 /**setup axios */
-axios.defaults.baseURL = "https://api.themoviedb.org/3";
-axios.defaults.headers.common[
-  "Authorization"
-] = `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNDczZmI3ZGVkYjNjZGE3YTI3NzEzNDgzY2ExOTM2NSIsIm5iZiI6MTcyMTg0NjA1OC40NjYwMzUsInN1YiI6IjY2YTE0ODAxNDlmZWM3NDIyNjgwY2QxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qg8te5TBH6U4yl9iIRBfgZkCcWv_6qYZi1RkNOGGziU`;
+// // axios.defaults.baseURL = "https://api.themoviedb.org/3";
+// // axios.defaults.headers.common[
+//   "Authorization"
+// ] = `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNDczZmI3ZGVkYjNjZGE3YTI3NzEzNDgzY2ExOTM2NSIsIm5iZiI6MTcyMTg0NjA1OC40NjYwMzUsInN1YiI6IjY2YTE0ODAxNDlmZWM3NDIyNjgwY2QxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qg8te5TBH6U4yl9iIRBfgZkCcWv_6qYZi1RkNOGGziU`;
 
 // TRENDING
 export const fetchTrending = async (timeWindow = "day") => {

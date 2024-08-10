@@ -21,7 +21,7 @@ export default function Card({ data, delete2, index, save }) {
       <div>
         <button
           onClick={() => {
-            delete2(index);
+            delete2(data?._id);
           }}
         >
           <i class="bi bi-trash"></i>

@@ -18,7 +18,7 @@ export default function FormLayout({change, submit, data}) {
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary" onClick={()=>{submit()}}>
-            Sign in
+            Add
           </button>
         </div>
       </form>
